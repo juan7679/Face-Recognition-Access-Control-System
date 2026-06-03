@@ -1,0 +1,181 @@
+================================================================================
+  CRÉDITOS, REFERENCIAS ACADÉMICAS Y CONSIDERACIONES ÉTICAS
+  Sistema de Reconocimiento Facial en Tiempo Real
+================================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. CRÉDITOS DEL PROYECTO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Proyecto: Sistema de Reconocimiento Facial en Tiempo Real
+  Materia:  Inteligencia Artificial
+  Docente:  Juan Pablo Paredes Ramirez
+  Fecha:    Junio 2026
+
+  INTEGRANTES:
+
+integrane 4: Jose Miguel Crespo Flores
+
+RESPONSIBAS: 
+Integrante 4:  BD, documentación y pruebas    
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. BIBLIOTECAS Y HERRAMIENTAS UTILIZADAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  OpenCV (Open Source Computer Vision Library)
+    Versión:   4.9.0
+    Licencia:  Apache 2.0
+    Uso:       Captura de video en tiempo real, visualización de frames,
+               dibujo de texto e interfaz gráfica.
+    Referencia: Bradski, G. (2000). The OpenCV Library. Dr. Dobb's Journal
+                of Software Tools. https://opencv.org
+
+  DeepFace
+    Versión:   0.0.93
+    Autor:     Sefik Ilkin Serengil (2020)
+    Licencia:  MIT License
+    Uso:       Framework de reconocimiento facial que abstrae el uso de
+               modelos como FaceNet, VGG-Face, ArcFace, etc.
+    Repositorio: https://github.com/serengil/deepface
+    Referencia: Serengil, S. I., & Ozpinar, A. (2020). LightFace: A Hybrid
+                Deep Face Recognition Framework. 2020 Innovations in
+                Intelligent Systems and Applications Conference (ASYU).
+                https://doi.org/10.1109/ASYU50717.2020.9259802
+
+  FaceNet (Modelo de reconocimiento)
+    Autores:   Florian Schroff, Dmitry Kalenichenko, James Philbin (Google)
+    Año:       2015
+    Uso:       Modelo de red neuronal que genera embeddings faciales de 128
+               dimensiones para comparación de identidades.
+    Referencia: Schroff, F., Kalenichenko, D., & Philbin, J. (2015).
+                FaceNet: A Unified Embedding for Face Recognition and
+                Clustering. Proceedings of the IEEE Conference on Computer
+                Vision and Pattern Recognition (CVPR), 815–823.
+                https://doi.org/10.1109/CVPR.2015.7298682
+
+  TensorFlow
+    Versión:   2.15.0
+    Autor:     Google Brain Team (2015)
+    Licencia:  Apache 2.0
+    Uso:       Backend de deep learning para la ejecución de modelos
+               de redes neuronales.
+    Referencia: Abadi, M., et al. (2015). TensorFlow: Large-Scale Machine
+                Learning on Heterogeneous Systems. Software available at
+                https://www.tensorflow.org
+
+  Python
+    Versión:   3.8+
+    Licencia:  PSF License
+    Sitio:     https://www.python.org
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. CONSIDERACIONES ÉTICAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  El reconocimiento facial es una tecnología poderosa que implica el
+  procesamiento de datos biométricos sensibles. Su uso responsable requiere
+  considerar los siguientes puntos:
+
+  3.1 CONSENTIMIENTO INFORMADO
+  ─────────────────────────────
+  • Toda persona cuyo rostro sea almacenado en la base de datos debe haber
+    dado su consentimiento explícito y voluntario.
+  • En entornos reales (no académicos), se debe informar claramente qué datos
+    se recopilan, cómo se almacenan y con qué propósito.
+  • Este proyecto es estrictamente para fines educativos y de demostración.
+
+  3.2 PRIVACIDAD Y PROTECCIÓN DE DATOS
+  ──────────────────────────────────────
+  • Las imágenes de la base de datos NO deben compartirse ni publicarse.
+  • Este sistema no almacena video ni capturas de personas no registradas.
+  • Se recomienda eliminar la base de datos al concluir el proyecto escolar.
+  • En México, el tratamiento de datos biométricos está regulado por la
+    Ley Federal de Protección de Datos Personales en Posesión de los
+    Particulares (LFPDPPP, 2010).
+
+  3.3 SESGOS Y LIMITACIONES
+  ───────────────────────────
+  • Los modelos de reconocimiento facial pueden presentar menor precisión
+    en ciertos grupos demográficos (personas de piel oscura, personas mayores,
+    mujeres) dependiendo de los datos con que fueron entrenados.
+  • Buolamwini & Gebru (2018) documentaron diferencias significativas de
+    rendimiento en sistemas comerciales de análisis facial según género
+    y tono de piel.
+  • Este proyecto reconoce dichas limitaciones y no debe utilizarse para
+    toma de decisiones que afecten a personas.
+
+  3.4 USO RESPONSABLE
+  ─────────────────────
+  • Este sistema fue desarrollado con propósito EDUCATIVO únicamente.
+  • No debe emplearse para vigilancia, control de acceso a instalaciones
+    reales, o cualquier aplicación que involucre personas sin su
+    conocimiento y consentimiento.
+  • El uso de tecnologías de reconocimiento facial en espacios públicos
+    está sujeto a debate ético y regulación legal en múltiples países.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. REFERENCIAS ACADÉMICAS (FORMATO APA 7ª EDICIÓN)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [1] Schroff, F., Kalenichenko, D., & Philbin, J. (2015). FaceNet: A unified
+      embedding for face recognition and clustering. En Proceedings of the
+      IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+      (pp. 815–823). IEEE. https://doi.org/10.1109/CVPR.2015.7298682
+
+  [2] Serengil, S. I., & Ozpinar, A. (2020). LightFace: A hybrid deep face
+      recognition framework. En 2020 Innovations in Intelligent Systems and
+      Applications Conference (ASYU). IEEE.
+      https://doi.org/10.1109/ASYU50717.2020.9259802
+
+  [3] Serengil, S. I., & Ozpinar, A. (2021). HyperExtended LightFace: A
+      facial attribute analysis framework. En 2021 International Conference
+      on Engineering and Emerging Technologies (ICEET). IEEE.
+      https://doi.org/10.1109/ICEET53442.2021.9659697
+
+  [4] Bradski, G. (2000). The OpenCV library. Dr. Dobb's Journal of Software
+      Tools, 25(11), 120–125. https://opencv.org
+
+  [5] Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional
+      accuracy disparities in commercial gender classification. En Proceedings
+      of the 1st Conference on Fairness, Accountability and Transparency
+      (FAccT) (Vol. 81, pp. 77–91). PMLR.
+      https://proceedings.mlr.press/v81/buolamwini18a.html
+
+  [6] Abadi, M., Agarwal, A., Barham, P., Brevdo, E., Chen, Z., Citro, C.,
+      Corrado, G. S., Davis, A., Dean, J., Devin, M., Ghemawat, S., Goodfellow,
+      I., Harp, A., Irving, G., Isard, M., Jia, Y., Jozefowicz, R., Kaiser, L.,
+      Kudlur, M., … Zheng, X. (2015). TensorFlow: Large-scale machine learning
+      on heterogeneous systems [Software].
+      https://www.tensorflow.org
+
+  [7] Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep learning.
+      MIT Press. https://www.deeplearningbook.org
+
+  [8] LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. Nature,
+      521(7553), 436–444. https://doi.org/10.1038/nature14539
+
+  [9] Learned-Miller, E., Huang, G. B., RoyChowdhury, A., Li, H., & Hua, G.
+      (2016). Labeled faces in the wild: A survey. En M. De Marsico &
+      A. Fred (Eds.), Advances in face detection and facial image analysis
+      (pp. 189–248). Springer.
+      https://doi.org/10.1007/978-3-319-25958-1_8
+
+  [10] Instituto Nacional de Transparencia, Acceso a la Información y
+       Protección de Datos Personales (INAI). (2010). Ley Federal de
+       Protección de Datos Personales en Posesión de los Particulares.
+       Diario Oficial de la Federación.
+       https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. LICENCIA DEL PROYECTO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Este proyecto es de uso educativo exclusivamente.
+  Desarrollado como trabajo escolar — todos los derechos reservados
+  por los integrantes del equipo.
+
+  Las bibliotecas de terceros utilizadas mantienen sus licencias originales
+  (Apache 2.0, MIT) según se indica en la sección 2.
+
+================================================================================
