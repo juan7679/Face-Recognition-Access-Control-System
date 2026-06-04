@@ -2,8 +2,11 @@
 import cv2
 import os
 import shutil
+import time
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
+from conocedor import reconocer_rostro
+from captura import registrar_usuario_automatico
 
 # ── Cargar módulo del compañero ───────────────────────────────────────
 print("Iniciando sistema, por favor espere...")
@@ -177,9 +180,6 @@ def obtener_usuarios():
     if not os.path.exists(RUTA_DB):
         return []
     return [d for d in os.listdir(RUTA_DB) if os.path.isdir(os.path.join(RUTA_DB, d))]
-
-
-def registrar_usuario(cap):
     print("\n=== REGISTRAR NUEVO USUARIO ===")
     nombre = input("Nombre del usuario: ").strip().lower().replace(" ", "_")
     if not nombre:
@@ -291,19 +291,47 @@ def main():
         cv2.imshow("Sistema de Acceso con Reconocimiento Facial", canvas_cv)
 
         key = cv2.waitKey(1) & 0xFF
+
         if key == ord('q'):
             break
+
         elif key == ord('r'):
+
             cv2.destroyAllWindows()
-            registrar_usuario(cap)
+
+            nombre = input(
+            "\nNombre del usuario: "
+            ).strip().lower().replace(" ", "_")
+
+            if nombre:
+
+                print(
+                    f"\n¿La persona '{nombre.upper()}' autoriza almacenar su rostro? (s/n): ",
+                    end=""
+                )
+
+            consentimiento = input().strip().lower()
+
+            if consentimiento == "s":
+
+                registrar_usuario_automatico(nombre, cap)
+
+                usuarios = obtener_usuarios()
+
+            else:
+
+                print(
+                "Registro cancelado por falta de consentimiento."
+                )
+
         elif key == ord('e'):
             cv2.destroyAllWindows()
+
             eliminar_usuario()
 
-    cap.release()
-    cv2.destroyAllWindows()
+    time.sleep(2)
     print("Sistema cerrado.")
-
+    
 
 if __name__ == "__main__":
     main()
