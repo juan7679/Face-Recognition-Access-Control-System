@@ -1,36 +1,40 @@
 import cv2
 import os
 from deepface import DeepFace
-
+from detector import detectar_rostro
 # =====================================================================
 # 1. ENTREGABLE: MÓDULO DE RECONOCIMIENTO FACIAL
 # =====================================================================
 def reconocer_rostro(frame_imagen, ruta_db="base_datos"):
+    # Primero verificar si hay rostro con MTCNN
+    rostros = detectar_rostro(frame_imagen)
+    if len(rostros) == 0:
+        return "Buscando rostro..."
+    
+    # Si hay rostro, reconocer con DeepFace
     try:
         resultados = DeepFace.find(
-            img_path=frame_imagen, 
-            db_path=ruta_db, 
-            model_name="Facenet", 
-            # CAMBIO CRÍTICO: 'opencv' es rapidísimo para video en vivo
-            detector_backend="opencv", 
-            enforce_detection=False, 
-            silent=True 
-        )
-        
+             img_path=frame_imagen, 
+             db_path=ruta_db, 
+             model_name="Facenet", 
+             detector_backend="opencv", 
+             enforce_detection=False, 
+             silent=True 
+      )
         if len(resultados) > 0 and not resultados[0].empty:
             ruta_match = resultados[0].iloc[0]['identity']
             nombre_carpeta = os.path.basename(os.path.dirname(ruta_match))
             distancia = resultados[0].iloc[0]['distance']
             
-            if distancia < 0.45:
+            if distancia < 0.30:
                 return nombre_carpeta.upper()
             else:
                 return "DESCONOCIDO"
         else:
-            return "Buscando rostro..."
+            return "DESCONOCIDO"
             
     except Exception as e:
-        return "Buscando rostro..."
+        return "DESCONOCIDO"
 
 
 # =====================================================================
